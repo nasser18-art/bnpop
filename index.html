@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Société Générale - Connexion Sécurisée</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container-new">
+        <div class="login-header">
+            <img src="assets/images/sg-logo.svg" alt="Société Générale" class="sg-logo-large">
+        </div>
+        
+        <div class="login-content">
+            <div class="welcome-text">
+                <h1>Bienvenue sur votre espace client</h1>
+                <p>Gérez vos comptes en toute sécurité, 24h/24 et 7j/7</p>
+            </div>
+            
+            <div class="login-card">
+                <h2>Connexion</h2>
+                
+                <div id="error-message" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="error-text"></span>
+                </div>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Numéro de client</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" placeholder="Entrez votre numéro de client" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Code confidentiel</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Entrez votre code confidentiel" required>
+                            <i class="fas fa-eye toggle-password" id="toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me">
+                            <span>Rester connecté</span>
+                        </label>
+                        <a href="#" class="forgot-link">Code oublié ?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <span>Accéder à mon espace</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <div class="security-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Vos données sont protégées par un cryptage de niveau bancaire</p>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Disponible 24/7</h3>
+                    <p>Accédez à vos comptes à tout moment</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Sécurité maximale</h3>
+                    <p>Vos transactions sont entièrement sécurisées</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Multi-plateforme</h3>
+                    <p>Compatible ordinateur, tablette et mobile</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>&copy; 2026 Société Générale - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+                <a href="#">Aide</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/login.js"></script>
+</body>
+</html>

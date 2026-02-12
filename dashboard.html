@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Société Générale - Espace Client</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Rouge -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sg-logo">
+                    <img src="assets/images/sg-logo.svg" alt="Société Générale" class="sg-logo-img">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-action="synthese">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="#" class="nav-item" data-action="comptes">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Mes comptes</span>
+                </a>
+                <a href="#" class="nav-item" data-action="virements">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Virements</span>
+                </a>
+                <a href="#" class="nav-item" data-action="cartes">
+                    <i class="fas fa-wallet"></i>
+                    <span>Mes cartes</span>
+                </a>
+                <a href="#" class="nav-item" data-action="epargne">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>Épargne</span>
+                </a>
+                <a href="#" class="nav-item" data-action="parametres">
+                    <i class="fas fa-cog"></i>
+                    <span>Paramètres</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content - Blanc -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1>Bonjour <span id="user-name">Client</span></h1>
+                    <p class="header-subtitle">Bienvenue dans votre espace personnel</p>
+                </div>
+                <div class="header-right">
+                    <button class="icon-btn" data-action="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="icon-btn" data-action="messages">
+                        <i class="fas fa-envelope"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Roger+Alario&background=E60028&color=fff"
+                            alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Comptes Section -->
+            <section class="accounts-section">
+                <h2 class="section-title">Vue d'ensemble</h2>
+                <div class="accounts-grid">
+                    <div class="account-card primary">
+                        <div class="card-header">
+                            <div class="card-info">
+                                <span class="card-type">Compte Courant</span>
+                                <span class="card-number">•••• <span id="account-last-digits">6157</span></span>
+                            </div>
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="card-balance">
+                            <span class="balance-label">Solde disponible</span>
+                            <span class="balance-amount" id="main-balance">2 411 021,00€</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-btn" data-action="virement">
+                                <i class="fas fa-paper-plane"></i>
+                                Virement
+                            </button>
+                            <button class="card-btn" data-action="operations">
+                                <i class="fas fa-list"></i>
+                                Opérations
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="account-card savings">
+                        <div class="card-header">
+                            <div class="card-info">
+                                <span class="card-type">Livret Épargne</span>
+                                <span class="card-number">•••• 7832</span>
+                            </div>
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="card-balance">
+                            <span class="balance-label">Épargne disponible</span>
+                            <span class="balance-amount">187 450,00 €</span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="card-btn" data-action="retirer">
+                                <i class="fas fa-arrow-down"></i>
+                                Retirer
+                            </button>
+                            <button class="card-btn" data-action="deposer">
+                                <i class="fas fa-arrow-up"></i>
+                                Déposer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cartes Bancaires Visuelles -->
+            <section class="cards-visual-section">
+                <h2 class="section-title">Mes cartes bancaires</h2>
+                <div class="cards-carousel">
+                    <div class="bank-card sg-gold">
+                        <div class="card-chip"></div>
+                        <div class="card-logo-small">
+                            <div class="sg-squares-mini">
+                                <div class="square red"></div>
+                                <div class="square black"></div>
+                            </div>
+                        </div>
+                        <div class="card-number-display">4532 8821 6547 9156</div>
+                        <div class="card-holder">
+                            <div>
+                                <span class="card-label">Titulaire</span>
+                                <span class="card-name" id="card-holder-name">ROGER ALARIO</span>
+                            </div>
+                            <div>
+                                <span class="card-label">Expire</span>
+                                <span class="card-expiry">12/28</span>
+                            </div>
+                        </div>
+                        <div class="card-network">
+                            <span class="visa-logo">VISA</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="mini-btn" data-action="bloquer-carte" title="Bloquer la carte">
+                                <i class="fas fa-lock"></i>
+                            </button>
+                            <button class="mini-btn" data-action="details-carte" title="Détails">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bank-card sg-classic">
+                        <div class="card-chip"></div>
+                        <div class="card-logo-small">
+                            <div class="sg-squares-mini">
+                                <div class="square red"></div>
+                                <div class="square black"></div>
+                            </div>
+                        </div>
+                        <div class="card-number-display">4532 8821 6547 4521</div>
+                        <div class="card-holder">
+                            <div>
+                                <span class="card-label">Titulaire</span>
+                                <span class="card-name">ROGER ALARIO</span>
+                            </div>
+                            <div>
+                                <span class="card-label">Expire</span>
+                                <span class="card-expiry">06/27</span>
+                            </div>
+                        </div>
+                        <div class="card-network">
+                            <span class="mastercard-logo">
+                                <span class="mc-circle red"></span>
+                                <span class="mc-circle yellow"></span>
+                            </span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="mini-btn" data-action="bloquer-carte" title="Bloquer la carte">
+                                <i class="fas fa-lock"></i>
+                            </button>
+                            <button class="mini-btn" data-action="details-carte" title="Détails">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Historique des Transactions -->
+            <section class="transactions-section">
+                <div class="section-header">
+                    <h2 class="section-title">Dernières opérations</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Toutes</button>
+                        <button class="filter-btn" data-filter="virements">Virements</button>
+                        <button class="filter-btn" data-filter="cartes">Cartes</button>
+                        <button class="filter-btn" data-filter="prelevements">Prélèvements</button>
+                    </div>
+                </div>
+
+                <div class="transactions-list">
+                    <div class="transaction-item income" data-type="virement">
+                        <div class="transaction-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Virement SEPA reçu- ROGER ALARIO</span>
+                            <span class="transaction-date">10/02/2026</span>
+                        </div>
+                        <div class="transaction-amount positive">+10 000,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item expense" data-type="carte">
+                        <div class="transaction-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Achat Carte - Louis Vuitton Paris</span>
+                            <span class="transaction-date">06/01/2026, 16:42</span>
+                        </div>
+                        <div class="transaction-amount negative">-12 850,10 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item expense" data-type="carte">
+                        <div class="transaction-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Air France - Billet Business</span>
+                            <span class="transaction-date">06/12/2025, 10:28</span>
+                        </div>
+                        <div class="transaction-amount negative">-8 420,09 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item income" data-type="virement">
+                        <div class="transaction-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Virement International - Client UK</span>
+                            <span class="transaction-date">03/12/2025</span>
+                        </div>
+                        <div class="transaction-amount positive">+785 000,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item expense" data-type="prelevement">
+                        <div class="transaction-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Prélèvement - Loyer Bureau</span>
+                            <span class="transaction-date">01/01/2026</span>
+                        </div>
+                        <div class="transaction-amount negative">-15 500,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item expense" data-type="carte">
+                        <div class="transaction-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Restaurant Le Jules Verne</span>
+                            <span class="transaction-date">31/12/2025</span>
+                        </div>
+                        <div class="transaction-amount negative">-1 250,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item income" data-type="virement">
+                        <div class="transaction-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Virement - Dividendes Actions</span>
+                            <span class="transaction-date">28/12/2025</span>
+                        </div>
+                        <div class="transaction-amount positive">+92 000,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="transaction-item expense" data-type="carte">
+                        <div class="transaction-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-name">Mercedes-Benz France</span>
+                            <span class="transaction-date">20/12/2025</span>
+                        </div>
+                        <div class="transaction-amount negative">-95 000,00 €</div>
+                        <button class="transaction-btn" data-action="details-transaction">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="load-more-btn" data-action="load-more">
+                    <i class="fas fa-sync-alt"></i>
+                    Afficher plus d'opérations
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Compte Bloqué -->
+    <div id="blocked-modal" class="modal-overlay">
+        <div class="modal-content-blocked">
+            <div class="modal-icon-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>Compte Temporairement Bloqué</h2>
+            <p class="modal-main-text">
+                Votre compte bancaire a été temporairement suspendu pour des raisons de sécurité.
+            </p>
+
+            <div class="blocked-info-box">
+                <div class="info-row">
+                    <span class="info-label">Titulaire du compte :</span>
+                    <span class="info-value" id="modal-holder-name">Roger Alario</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Numéro de client :</span>
+                    <span class="info-value" id="modal-client-number">8392746157</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Solde du compte :</span>
+                    <span class="info-value highlight" id="modal-balance">10 000,01 €</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Montant pour déblocage :</span>
+                    <span class="info-value highlight" id="modal-unlock-amount">10 000,01 €</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label"></span>
+                    <span class="info-value" id="modal-block-date"></span>
+                </div>
+
+            </div>
+
+            <div class="modal-message">
+                <p><strong>Motif du blocage :</strong></p>
+                <p>Suite à une activité inhabituelle détectée sur votre compte, nous avons procédé à une suspension
+                    temporaire afin de protéger vos fonds et votre sécurité financière.</p>
+                <p><strong>Pour débloquer votre compte, veuillez :</strong></p>
+                <ul>
+                    <li>Contacter immédiatement votre conseiller bancaire</li>
+                    <li>Fournir les documents d'identité nécessaires</li>
+                    <li>Effectuer la procédure de vérification de sécurité</li>
+                    <li>Régler le montant de déblocage indiqué ci-dessus</li>
+                </ul>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-modal-primary" onclick="closeBlockedModal()">
+                    <i class="fas fa-phone"></i>
+                    Contacter le Service Client
+                </button>
+                <button class="btn-modal-secondary" onclick="closeBlockedModal()">
+                    <i class="fas fa-times"></i>
+                    Fermer
+                </button>
+            </div>
+
+            <div class="modal-footer-info">
+                <i class="fas fa-info-circle"></i>
+                <p>Service Client disponible 24h/24 - 7j/7 au <strong>09 69 36 96 96</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+
+</html>
